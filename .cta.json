@@ -1,0 +1,34 @@
+{
+  "projectName": "soundweave",
+  "mode": "file-router",
+  "typescript": true,
+  "packageManager": "npm",
+  "includeExamples": true,
+  "tailwind": true,
+  "addOnOptions": {},
+  "envVarValues": {
+    "VITE_CLERK_PUBLISHABLE_KEY": "pk_test_d2lyZWQtZ251LTYuY2xlcmsuYWNjb3VudHMuZGV2JA",
+    "CONVEX_DEPLOYMENT": "dev:quixotic-akita-210",
+    "VITE_CONVEX_URL": "https://quixotic-akita-210.eu-west-1.convex.cloud/"
+  },
+  "git": true,
+  "routerOnly": false,
+  "version": 1,
+  "framework": "react-cra",
+  "chosenAddOns": [
+    "eslint",
+    "clerk",
+    "convex",
+    "sentry",
+    "compiler",
+    "form",
+    "paraglide",
+    "shadcn",
+    "t3env",
+    "table",
+    "store",
+    "posthog",
+    "tanstack-query",
+    "events"
+  ]
+}

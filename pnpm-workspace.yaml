@@ -1,0 +1,7 @@
+onlyBuiltDependencies:
+  - '@clerk/shared'
+  - '@sentry/cli'
+  - core-js
+  - esbuild
+  - protobufjs
+  - unrs-resolver
