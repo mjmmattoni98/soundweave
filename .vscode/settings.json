@@ -9,10 +9,13 @@
     "**/routeTree.gen.ts": true
   },
   "cSpell.words": [
+    "isrc",
+    "ISRC",
     "protobufjs",
     "tanstackstart",
     "unconfig",
     "unrs",
     "vinxi"
-  ]
+  ],
+  "kiroAgent.configureMCP": "Disabled"
 }
