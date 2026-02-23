@@ -52,12 +52,6 @@ The implementation follows an incremental approach: set up infrastructure, imple
     - Handle token refresh and expiration
     - _Requirements: 1.3, 1.4, 1.5, 1.6, 1.7, 2.1, 2.2_
   
-  - [ ]* 2.5 Write unit tests for service connectors
-    - Test authentication flows with mocked OAuth responses
-    - Test playlist operations with mocked API responses
-    - Test error handling and token refresh logic
-    - _Requirements: 1.4, 1.5, 1.6, 1.7, 15.1, 15.2, 15.3_
-
 - [ ] 3. Song matching engine
   - [ ] 3.1 Implement string similarity algorithm
     - Implement Levenshtein distance calculation
@@ -65,38 +59,19 @@ The implementation follows an incremental approach: set up infrastructure, imple
     - Create utility functions for text normalization (lowercase, remove special chars)
     - _Requirements: 6.4, 6.5_
   
-  - [ ]* 3.2 Write unit tests for string similarity
-    - Test exact matches return 100
-    - Test completely different strings return low scores
-    - Test partial matches return appropriate scores
-    - _Requirements: 6.4, 6.5_
-  
-  - [ ] 3.3 Implement SongMatcher component
+  - [ ] 3.2 Implement SongMatcher component
     - Implement findMatch method with ISRC-first strategy
     - Implement calculateMetadataScore with weighted scoring (title 50%, artist 35%, album 15%)
     - Implement confidence thresholds (≥95% high, 70-94% medium, <70% low)
     - Implement explicit/clean version prioritization
     - _Requirements: 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 6.10, 7.1, 7.2, 7.3_
   
-  - [ ]* 3.4 Write unit tests for SongMatcher
-    - Test ISRC matching takes priority over metadata
-    - Test metadata scoring with various similarity levels
-    - Test confidence threshold classification
-    - Test explicit/clean version prioritization
-    - _Requirements: 6.1, 6.2, 6.3, 6.6, 6.7, 6.8, 6.9, 6.10, 7.1, 7.2_
-  
-  - [ ] 3.5 Implement match caching in Convex
+  - [ ] 3.3 Implement match caching in Convex
     - Create Convex mutation to store match results
     - Create Convex query to retrieve cached matches
     - Implement 7-day expiration logic
     - _Requirements: 17.5_
   
-  - [ ]* 3.6 Write unit tests for match caching
-    - Test cache hit returns cached result
-    - Test cache miss triggers new search
-    - Test expired cache entries are ignored
-    - _Requirements: 17.5_
-
 - [ ] 4. Checkpoint - Core services complete
   - Ensure all tests pass, ask the user if questions arise.
 
@@ -127,14 +102,6 @@ The implementation follows an incremental approach: set up infrastructure, imple
     - Create SyncError records for unmatched tracks
     - _Requirements: 8.1, 8.2, 15.1, 15.2, 15.3, 15.5_
   
-  - [ ]* 5.5 Write unit tests for sync engine
-    - Test one-time copy mode adds all tracks
-    - Test bidirectional sync detects and applies changes
-    - Test one-way sync ignores target changes
-    - Test error handling and retry logic
-    - Test batch processing for large playlists
-    - _Requirements: 3.1, 3.2, 3.3, 4.1, 4.2, 4.3, 4.4, 4.5, 5.1, 5.2, 5.3, 5.4, 15.1, 15.2, 15.3_
-
 - [ ] 6. Convex functions for sync operations
   - [ ] 6.1 Create Convex mutations for sync configuration management
     - createSyncConfiguration mutation
@@ -183,12 +150,6 @@ The implementation follows an incremental approach: set up infrastructure, imple
     - Redirect user back to dashboard after successful connection
     - _Requirements: 1.4, 1.5, 18.1, 18.3_
   
-  - [ ]* 7.3 Write Playwright tests for authentication flow
-    - Test connecting a music service
-    - Test disconnecting a music service
-    - Test token refresh on expiration
-    - _Requirements: 1.4, 1.5, 1.6, 1.7_
-
 - [ ] 8. Playlist browser and sync configuration UI
   - [ ] 8.1 Create playlist browser component
     - Fetch and display playlists grouped by service
@@ -211,13 +172,6 @@ The implementation follows an incremental approach: set up infrastructure, imple
     - Handle validation errors
     - _Requirements: 3.1, 4.1, 5.1_
   
-  - [ ]* 8.4 Write Playwright tests for sync configuration
-    - Test creating one-time copy configuration
-    - Test creating bidirectional sync configuration
-    - Test creating one-way sync configuration
-    - Test form validation
-    - _Requirements: 3.1, 4.1, 5.1_
-
 - [ ] 9. Sync dashboard and monitoring UI
   - [ ] 9.1 Create sync dashboard component
     - Display all sync configurations in cards/table
@@ -240,13 +194,6 @@ The implementation follows an incremental approach: set up infrastructure, imple
     - Add pagination for large history
     - _Requirements: 13.1, 13.2, 13.3, 13.4, 13.5_
   
-  - [ ]* 9.4 Write Playwright tests for dashboard
-    - Test dashboard displays all sync configurations
-    - Test manual sync triggering
-    - Test real-time progress updates
-    - Test viewing sync history
-    - _Requirements: 10.1, 10.2, 10.3, 10.4, 10.5, 12.1, 12.2, 12.3, 12.4, 13.4_
-
 - [ ] 10. Checkpoint - UI and sync flow complete
   - Ensure all tests pass, ask the user if questions arise.
 
@@ -279,14 +226,6 @@ The implementation follows an incremental approach: set up infrastructure, imple
     - Remove error from unresolved list
     - _Requirements: 9.5_
   
-  - [ ]* 11.5 Write Playwright tests for error resolution
-    - Test viewing error list
-    - Test opening error resolution modal
-    - Test selecting manual match
-    - Test skipping error
-    - Test searching for alternative tracks
-    - _Requirements: 8.3, 8.4, 8.5, 9.1, 9.2, 9.3, 9.4, 9.5_
-
 - [ ] 12. Notifications and user feedback
   - [ ] 12.1 Implement in-app notification system
     - Create notification component with toast/banner UI
@@ -301,13 +240,6 @@ The implementation follows an incremental approach: set up infrastructure, imple
     - Store preferences in Convex user settings
     - _Requirements: 16.3_
   
-  - [ ]* 12.3 Write unit tests for notification system
-    - Test notification appears on sync error
-    - Test notification appears on sync failure
-    - Test notification badge updates with error count
-    - Test notification preferences are respected
-    - _Requirements: 16.1, 16.2, 16.3, 16.4_
-
 - [ ] 13. Performance optimization
   - [ ] 13.1 Implement batch processing for large playlists
     - Process tracks in batches of 50 for playlists >500 tracks
@@ -327,13 +259,6 @@ The implementation follows an incremental approach: set up infrastructure, imple
     - Test query performance with large datasets
     - _Requirements: 17.1, 17.2, 17.4_
   
-  - [ ]* 13.4 Write performance tests
-    - Test sync completes within 30s for <100 tracks
-    - Test sync completes within 2min for 100-500 tracks
-    - Test batch processing for >500 tracks
-    - Test cache improves repeat sync performance
-    - _Requirements: 17.1, 17.2, 17.3, 17.5_
-
 - [ ] 14. Security and data privacy
   - [ ] 14.1 Implement token encryption
     - Use Convex built-in encryption for sensitive fields
@@ -366,21 +291,7 @@ The implementation follows an incremental approach: set up infrastructure, imple
     - Configure redirects and headers
     - _Requirements: Foundation for all requirements_
   
-  - [ ] 15.2 Set up CI/CD pipeline
-    - Configure GitHub Actions for automated testing
-    - Run Vitest unit tests on PR
-    - Run Playwright E2E tests on PR
-    - Deploy to Netlify on merge to main
-    - _Requirements: Foundation for all requirements_
-  
-  - [ ]* 15.3 Write end-to-end integration tests
-    - Test complete sync flow from configuration to completion
-    - Test error resolution flow
-    - Test automatic scheduled sync
-    - Test multi-service sync
-    - _Requirements: All requirements_
-  
-  - [ ] 15.4 Create deployment documentation
+  - [ ] 15.2 Create deployment documentation
     - Document environment variable setup
     - Document OAuth app configuration for each service
     - Document Convex deployment process
